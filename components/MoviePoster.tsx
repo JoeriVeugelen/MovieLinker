@@ -12,7 +12,7 @@ function MoviePoster({
   movie: Movie | SimilarMovie;
 }) {
   return (
-    <Link key={movie._id} href={`/movie/${movie._id}`} className="">
+    <Link key={movie._id} href={`/movie/${movie._id}`} className="mx-auto">
       <div className="relative">
         <ImageWithFallback
           className="min-w-64 max-w-64 h-96 object-cover rounded-lg shadow-lg"

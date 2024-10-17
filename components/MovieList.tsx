@@ -16,8 +16,8 @@ export default function MovieList({ movies }: { movies: Movie[] }) {
   const currentMovies = movies.slice(startIndex, endIndex);
 
   return (
-    <div className="flex flex-col items-center justify-center pb-24 pt-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 mb-8">
+    <div className="grid grid-rows-[1fr,auto] gap-8 pb-24 pt-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {currentMovies.map((movie) => (
           <MoviePoster key={movie._id} movie={movie} />
         ))}

@@ -12,7 +12,7 @@ function SearchInput() {
   }
 
   return (
-    <div className="flex items-center justify-center gap-10 w-full md:w-10/12">
+    <div className="flex items-center justify-center gap-10 w-full mx-6">
       <Link href="/">
         <FaHome className="h-10 w-10 text-gray-300" />
       </Link>
