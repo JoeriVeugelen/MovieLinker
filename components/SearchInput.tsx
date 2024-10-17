@@ -12,20 +12,22 @@ function SearchInput() {
   }
 
   return (
-    <form
-      action={searchAction}
-      className="w-10/12 flex items-center px-5 border-gray-500 bg-[#0A0A0A] border shadow-lg rounded-lg"
-    >
+    <div className="flex items-center justify-center gap-10 w-full md:w-10/12">
       <Link href="/">
         <FaHome className="h-10 w-10 text-gray-300" />
       </Link>
-      <input
-        type="text"
-        className="flex-1 p-5 outline-none bg-[#0A0A0A] text-zinc-50"
-        name="searchTerm"
-        placeholder="What type of movies do you like? e.g. Sci-Fi films in space..."
-      />
-    </form>
+      <form
+        action={searchAction}
+        className="w-full flex items-center px-5 border-gray-500 bg-[#0A0A0A] border shadow-lg rounded-lg"
+      >
+        <input
+          type="text"
+          className="flex-1 p-5 outline-none bg-[#0A0A0A] text-zinc-50"
+          name="searchTerm"
+          placeholder="Ex: space movies"
+        />
+      </form>
+    </div>
   );
 }
 
