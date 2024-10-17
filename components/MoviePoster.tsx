@@ -34,7 +34,9 @@ function MoviePoster({
       </div>
 
       <div className="py-2">
-        <p className="text-lg font-semibold line-clamp-1 w-64">{movie.Title}</p>
+        <p className="text-lg font-semibold line-clamp-1 w-64 text-zinc-50">
+          {movie.Title}
+        </p>
         <p className="text-gray-500 line-clamp-1">{movie.Genre}</p>
       </div>
     </Link>

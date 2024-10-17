@@ -1,4 +1,4 @@
-import { HomeIcon } from "@heroicons/react/16/solid";
+import { FaHome } from "react-icons/fa";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
@@ -14,16 +14,16 @@ function SearchInput() {
   return (
     <form
       action={searchAction}
-      className="w-full flex items-center px-5 rounded-full border-white bg-white border shadow-lg"
+      className="w-10/12 flex items-center px-5 border-gray-500 bg-[#0A0A0A] border shadow-lg rounded-lg"
     >
       <Link href="/">
-        <HomeIcon className="h-10 w-10 text-gray-300" />
+        <FaHome className="h-10 w-10 text-gray-300" />
       </Link>
       <input
         type="text"
-        className="flex-1 p-5 outline-none"
+        className="flex-1 p-5 outline-none bg-[#0A0A0A] text-zinc-50"
         name="searchTerm"
-        placeholder="What type of film do you like? e.g. Sci-Fi films in space..."
+        placeholder="What type of movies do you like? e.g. Sci-Fi films in space..."
       />
     </form>
   );

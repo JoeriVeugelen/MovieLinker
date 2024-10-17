@@ -14,10 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-gradient-to-r from-purple-700/60 to-blue-500/90 max-w-7xl mx-auto">
-        <main className="bg-slate-50/50 shadow-2xl drop-shadow-2xl">
+      <body className="bg-[#050505] max-w-7xl mx-auto">
+        <main>
           <Header />
-
           {children}
         </main>
       </body>
