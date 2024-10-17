@@ -37,17 +37,17 @@ export default async function MoviePage({
   similarMovies.shift();
 
   return (
-    <div className="container mx-auto px-4 py-16">
+    <div className="container mx-auto px-4 pt-16 pb-4">
       <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
         <Image
           src={movie.Poster}
           alt={movie.Title}
           width={300}
           height={450}
-          className="rounded-lg w-full max-w-[300px] h-auto"
+          className="rounded-lg md:max-h-[400px] h-auto object-contain"
         />
-        <div className="flex flex-col gap-4 w-full">
-          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-zinc-50">
+        <div className="flex flex-col gap-4 w-full px-8">
+          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-yellow-300">
             {movie.Title}
           </h1>
           <p className="text-gray-400">{movie.Genre}</p>
@@ -75,8 +75,8 @@ export default async function MoviePage({
       </div>
 
       <div className="">
-        <h2 className="text-3xl pt-10 pl-10 font-bold text-zinc-50">
-          Similar Films you may like
+        <h2 className="text-3xl pt-10 pl-10 font-bold text-zinc-50 px-8 md:px-0">
+          Similar movies you may like
         </h2>
         <div
           className="flex justify-between items-center lg:flex-row gap-x-20 gap-y-10 pl-20 pr-10 py-10 overflow-x-scroll 

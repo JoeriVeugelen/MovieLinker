@@ -14,7 +14,7 @@ function SearchInput() {
   return (
     <div className="flex items-center justify-center gap-10 w-full mx-6">
       <Link href="/">
-        <FaHome className="h-10 w-10 text-gray-300" />
+        <FaHome className="h-10 w-10 text-yellow-300" />
       </Link>
       <form
         action={searchAction}
