@@ -28,8 +28,9 @@ async function SearchTerm({
 
   return (
     <div className="flex flex-col items-center">
-      <h1 className="my-10 px-6 text-xl text-gray-300">
-        Suggested results based on your search
+      <h1 className="my-10 text-center px-6 text-xl text-gray-300">
+        The 10 most similar movies to{" "}
+        <span className="text-yellow-300">{term}</span>
       </h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
