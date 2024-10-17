@@ -28,7 +28,7 @@ async function SearchTerm({
 
   return (
     <div className="flex flex-col items-center">
-      <h1 className="my-10 text-xl text-gray-100">
+      <h1 className="my-10 px-6 text-xl text-gray-300">
         Suggested results based on your search
       </h1>
 
