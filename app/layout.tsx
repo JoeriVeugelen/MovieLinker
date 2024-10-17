@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html className="overflow-y-scroll" lang="en">
       <body className="bg-[#050505] max-w-7xl mx-auto">
         <main>
           <Header />

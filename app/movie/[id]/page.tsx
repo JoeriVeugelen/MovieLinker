@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 
 export const revalidate = 60 * 60 * 24;
 
-async function MoviePage({
+export default async function MoviePage({
   params: { id },
 }: {
   params: {
@@ -37,52 +37,51 @@ async function MoviePage({
   similarMovies.shift();
 
   return (
-    <div>
-      <div className="flex flex-col md:flex-row items-center gap-y-10 p-10 pb-0">
+    <div className="container mx-auto px-4 py-16">
+      <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
         <Image
           src={movie.Poster}
           alt={movie.Title}
           width={300}
           height={450}
-          className="shrink-0 rounded-lg "
+          className="rounded-lg w-full max-w-[300px] h-auto"
         />
-        <div className="px-2 md:px-10 flex flex-col gap-y-2">
-          <h1 className="text-6xl font-bold">{movie.Title}</h1>
-          <p className="text-gray-600">{movie.Genre}</p>
-          <p className="font-light">{movie.$vectorize}</p>
+        <div className="flex flex-col gap-4 w-full">
+          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-zinc-50">
+            {movie.Title}
+          </h1>
+          <p className="text-gray-400">{movie.Genre}</p>
+          <p className="font-light text-sm">{movie.$vectorize}</p>
 
-          <div className="mt-auto grid grid-cols-2">
-            <div className="font-semibold">
-              <p>Directed by</p>
-              <p>Featuring</p>
-              <p>Box Office:</p>
-              <p>Released:</p>
-              <p>Runtime:</p>
-              <p>Rated:</p>
-              <p>IMDB Rating:</p>
-              <p>Language:</p>
-              <p>Country:</p>
-            </div>
-            <div>
-              <p>{movie.Director}</p>
-              <p>{movie.Actors}</p>
-              <p>{movie.BoxOffice}</p>
-              <p>{movie.Released}</p>
-              <p>{movie.Runtime}</p>
-              <p>{movie.Rated}</p>
-              <p>{movie.imdbRating}</p>
-              <p>{movie.Language}</p>
-              <p>{movie.Country}</p>
-            </div>
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 text-sm">
+            {[
+              { label: "Directed by", value: movie.Director },
+              { label: "Featuring", value: movie.Actors },
+              { label: "Box Office", value: movie.BoxOffice },
+              { label: "Released", value: movie.Released },
+              { label: "Runtime", value: movie.Runtime },
+              { label: "Rated", value: movie.Rated },
+              { label: "IMDB Rating", value: movie.imdbRating },
+              { label: "Language", value: movie.Language },
+              { label: "Country", value: movie.Country },
+            ].map(({ label, value }) => (
+              <div key={label} className="flex flex-col">
+                <span className="font-semibold text-zinc-300">{label}</span>
+                <span className="text-zinc-50">{value}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
       <div className="">
-        <h2 className="text-3xl pt-10 pl-10 font-bold ">
+        <h2 className="text-3xl pt-10 pl-10 font-bold text-zinc-50">
           Similar Films you may like
         </h2>
-        <div className="flex justify-between items-center lg:flex-row gap-x-20 gap-y-10 pl-20 pr-10 py-10 overflow-x-scroll">
+        <div
+          className="flex justify-between items-center lg:flex-row gap-x-20 gap-y-10 pl-20 pr-10 py-10 overflow-x-scroll 
+                        scrollbar-thin scrollbar-thumb-zinc-600 scrollbar-track-zinc-800"
+        >
           {similarMovies.map((movie, i) => (
             <MoviePoster
               key={movie._id}
@@ -96,5 +95,3 @@ async function MoviePage({
     </div>
   );
 }
-
-export default MoviePage;
