@@ -35,7 +35,7 @@ async function SearchTerm({
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
         {similarMovies.map((movie, i) => (
           <div key={movie._id} className="mx-auto relative">
-            <p className="absolute flex items-center justify-center left-4 top-2 text-white font-extrabold text-xl z-40 rounded-full bg-indigo-500/80 w-10 h-10">
+            <p className="absolute flex items-center justify-center left-4 top-2 text-white font-extrabold text-xl z-40 rounded-full bg-[#050505] w-10 h-10">
               {i + 1}
             </p>
 
