@@ -26,11 +26,13 @@ async function SearchTerm({
     )
     .toArray()) as Movie[];
 
+  const decodedTerm = decodeURIComponent(term);
+
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center pb-24">
       <h1 className="my-10 text-center px-6 text-xl text-gray-300">
-        The 10 most similar movies to{" "}
-        <span className="text-yellow-300">{term}</span>
+        The 10 most similar movies to
+        <span className="text-yellow-300"> {decodedTerm}</span>
       </h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
