@@ -1,6 +1,7 @@
 import { Movie, SimilarMovie } from "@/types";
 import Link from "next/link";
 import ImageWithFallback from "./ImageWithFallback";
+import { FaImdb } from "react-icons/fa";
 
 function MoviePoster({
   index,
@@ -33,11 +34,17 @@ function MoviePoster({
         )}
       </div>
 
-      <div className="py-2">
-        <p className="text-lg font-semibold line-clamp-1 w-64 text-yellow-300">
+      <div className="py-2 w-64">
+        <p className="text-lg font-semibold line-clamp-1 text-zinc-50">
           {movie.Title}
         </p>
-        <p className="text-gray-500 line-clamp-1">{movie.Genre}</p>
+        <div className="flex justify-between items-center">
+          <p className="text-gray-500 line-clamp-1 flex-grow">{movie.Genre}</p>
+          <div className="flex items-center text-yellow-300 ml-2">
+            <FaImdb className="mr-1" />
+            <span>{movie.imdbRating}</span>
+          </div>
+        </div>
       </div>
     </Link>
   );
