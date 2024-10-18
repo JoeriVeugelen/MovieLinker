@@ -1,3 +1,4 @@
+import ImageWithFallback from "@/components/ImageWithFallback";
 import MoviePoster from "@/components/MoviePoster";
 import db from "@/db";
 import { Movie, SimilarMovie } from "@/types";
@@ -39,11 +40,9 @@ export default async function MoviePage({
   return (
     <div className="container mx-auto px-4 pt-16 pb-4">
       <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-        <Image
+        <ImageWithFallback
           src={movie.Poster}
           alt={movie.Title}
-          width={300}
-          height={450}
           className="rounded-lg md:max-h-[400px] h-auto object-contain"
         />
         <div className="flex flex-col gap-4 w-full px-8">
